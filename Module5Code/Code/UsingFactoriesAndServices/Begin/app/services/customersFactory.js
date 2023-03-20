@@ -1,5 +1,10 @@
 (function () {
-  var customersFactory = function ($scope) {
+  "use strict";
+
+  angular.module("customersApp").factory("customersFactory", customersFactory);
+
+  /** @ngInject */
+  function customersFactory() {
     var customers = [
       {
         id: 1,
@@ -64,13 +69,12 @@
       },
     ];
 
-    var factory = {};
-    factory.getCustomers = function () {
-      return customers;
+    return {
+      getCustomers: getCustomers,
     };
 
-    return factory;
-  };
-
-  angular.module("customersApp").factory("customersFactory", customersFactory);
-});
+    function getCustomers() {
+      return customers;
+    }
+  }
+})();
