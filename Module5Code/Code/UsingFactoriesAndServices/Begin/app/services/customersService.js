@@ -1,10 +1,10 @@
 (function () {
   "use strict";
 
-  angular.module("customersApp").factory("customersFactory", customersFactory);
+  angular.module("customersApp").service("customersService", customersService);
 
   /** @ngInject */
-  function customersFactory() {
+  function customersService() {
     var customers = [
       {
         id: 1,
@@ -69,16 +69,11 @@
       },
     ];
 
-    return {
-      getCustomers: getCustomers,
-      getCustomer: getCustomer,
+    this.getCustomers = function () {
+      return customers;
     };
 
-    function getCustomers() {
-      return customers;
-    }
-
-    function getCustomer(customerId) {
+    this.getCustomer = function (customerId) {
       //Search the customers for the customerId
 
       for (var i = 0, len = customers.length; i < len; i++) {
@@ -87,6 +82,6 @@
         }
       }
       return {};
-    }
+    };
   }
 })();

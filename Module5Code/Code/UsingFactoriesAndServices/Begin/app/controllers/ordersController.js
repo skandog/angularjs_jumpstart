@@ -4,7 +4,6 @@
     $scope.orders = null;
 
     function init() {
-      //Search the customers for the customerId
       $scope.customer = customersFactory.getCustomer(customerId);
     }
 
