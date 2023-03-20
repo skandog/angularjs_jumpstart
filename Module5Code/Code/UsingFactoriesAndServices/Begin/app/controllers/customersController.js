@@ -4,7 +4,6 @@
     $scope.reverse = false;
     $scope.customers = [];
 
-    console.log("what the bloody helll");
     function init() {
       $scope.customers = customersService.getCustomers();
     }
