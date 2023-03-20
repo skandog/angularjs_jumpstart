@@ -6,3 +6,7 @@ th {
     text-align: left;
     background-color: #efefef;
 }
+
+.tableHeader{
+    cursor: pointer;
+}

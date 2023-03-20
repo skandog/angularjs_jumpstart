@@ -15,13 +15,21 @@
     <br />
     <table>
       <tr>
-        <th>Name</th>
-        <th>City</th>
-        <th>Order Total</th>
-        <th>Joined</th>
+        <th ng-click="sortBy='name';reverse=!reverse" class="tableHeader">
+          Name
+        </th>
+        <th ng-click="sortBy='city';reverse=!reverse" class="tableHeader">
+          City
+        </th>
+        <th ng-click="sortBy='orderTotal';reverse=!reverse" class="tableHeader">
+          Order Total
+        </th>
+        <th ng-click="sortBy='joined';reverse=!reverse" class="tableHeader">
+          Joined
+        </th>
       </tr>
       <tr
-        ng-repeat="cust in customers |   filter:customerFilter |  orderBy:'name'"
+        ng-repeat="cust in customers |   filter:customerFilter |  orderBy:sortBy:reverse"
       >
         <td>{{ cust.name |uppercase }}</td>
         <td>{{ cust.city | lowercase }}</td>
