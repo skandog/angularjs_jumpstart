@@ -69,11 +69,15 @@
       },
     ];
 
-    this.getCustomers = function () {
+    function getCustomers() {
       return customers;
-    };
+    }
 
-    this.getCustomer = function (customerId) {
+    this.getCustomers = getCustomers;
+
+    this.getCustomer = getCustomer;
+
+    function getCustomer(customerId) {
       //Search the customers for the customerId
 
       for (var i = 0, len = customers.length; i < len; i++) {
@@ -82,6 +86,6 @@
         }
       }
       return {};
-    };
+    }
   }
 })();
